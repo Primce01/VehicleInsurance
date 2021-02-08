@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register New Vehicle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+  <ion-list>
+    <ion-item>
+      <ion-label>Make</ion-label>
+      <ion-select formControlName="make_id" cancelText="Cancel" okText="Ok">
+        <ion-select-option  *ngFor="let make of makes" [value]="make.id">{{make.name}}</ion-select-option>
+      </ion-select> 
+    </ion-item>
+    <ion-item>
+      <ion-label>Model</ion-label>
+      <ion-select formControlName="model_id" cancelText="Cancel" okText="Ok">
+        <ion-select-option *ngFor="let model of make?.models" [value]="model.id">{{model.name}}</ion-select-option>
+      </ion-select> 
+    </ion-item>
+    <ion-item>
+      <ion-label>Year</ion-label>
+      <ion-datetime position="floating" displayFormat="YYYY" formControlName="year"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Chassiss Number</ion-label>
+      <ion-input position="floating" formControlName="chassis"></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label>Mileage</ion-label>
+    <ion-input position="floating"  formControlName="mileage"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label>Registration Number</ion-label>
+  <ion-input position="floating" formControlName="reg"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label>Use</ion-label>
+  <ion-input position="floating" formControlName="use"></ion-input>
+  </ion-item>
+  </ion-list>
+  </form>
+</ion-content>
+
+<ion-footer class="ion-padding">
+  <ion-button [disabled]="form.invalid" size="block" (click)="onSubmit()">Save Vehicle</ion-button>
+</ion-footer>

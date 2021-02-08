@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "vehicleinsuarance": {
+      "hosting": {
+        "app": [
+          "vehicleinsuarance"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "vehicleinsuarance"
+  }
+}

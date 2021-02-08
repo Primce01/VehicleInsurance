@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Claims</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+ <ion-list >
+    <h3 class="ion-padding">Claim Processes</h3>
+   <ion-item>
+      <ion-text>1. Polic report</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text>2. Completed Claim Form</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text>3. Photo Of Accident Scene</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text> 4. Copy Of Driver's licence</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text>5. Three Qoutations from Recommended Panel Beaters</ion-text>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <h3 class="ion-padding">Claims Proccessing Procedure</h3>
+    <ion-item>
+      <ion-text>1. Report the accident at the nearest police station and obtain a Police Report.</ion-text>
+    </ion-item>
+    <ion-item >
+      <ion-text>2. Complete a claim form <a routerLink="/downloads">Click this link to download Forms</a> or obtain them at our website</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text>3. Photos of the scene of the accident and damaged vehicle</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text> 4. Obtain and submit 3 quatations from the recommended panel beaters (list available at the download link below.)</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text>5. Submit the stated documents through any of our offices located at ....</ion-text>
+    </ion-item>
+  </ion-list>
+
+ 
+</ion-content>
+<ion-footer class="ion-padding">
+  <ion-button size= "block" (click)="onSubmit()">Make Claim</ion-button> 
+</ion-footer>

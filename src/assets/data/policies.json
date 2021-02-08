@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "name": "Road Traffic Act (RTA) Cover",
+        "description": "This is the most common and basic type of motor insurance. It is the minimum vehicle insurance required under the Road Traffic Act (Chapter 13.11).t is commonly known as RTA Cover (meaning Road Traffic Act Cover). Third party insurance is compulsory in Zimbabwe. You need it to obtain a vehicle licence from the Zimbabwe National Roads Administration (Zinara). This policy covers liability to a third party who has suffered bodily injury, death or property damage through your fault. Most vehicle owners obtain RTA Cover simply for licensing purposes but it is a statutory cover that protects other parties and can be claimed against. An insurer is expected to honour such a claim if all is in order. Cover limits are gazetted at $3 000 for third party bodily injury and $2 000 for third party property damage. It is illegal for any insurance company to sell this cover without actually providing for payment up to those limits. Some touts have been providing cover notes on which it is written that the cover note is only for licensing purposes and cannot be claimed against. Such cover notes do not constitute valid cover. No legitimate insurance company would issue such a cover note." 
+    },
+    {
+        "id": 2,
+        "name": "Third Party Cover",
+        "description": "Third party cover is similar to RTA Cover but has increased policy limits. It covers only the amount for which you are legally liable to a third party if your vehicle is involved in an accident. If you crash into another car or someone else’s property, the insurance company will pay for the damage to the other car or property. The policy does not cover damage to your own car. The standard limit for accidental injury to or death of third parties, whether they are pedestrians or passengers, is $10 000. The limit for accidental damage to a third party’s moveable or immovable property is also $10 000. A vehicle owner can opt to increase this limit at an extra premium to be determined by the insurer. When you are involved in an accident which it is concluded was your fault or due to your negligence, the third party liability cover will meet the third party costs up to the specified limits. The policy covers the cost of the repair or replacement of the third party’s damaged property. It also covers the medical bills of the third party due to hospitalisation or medical treatment."
+    },
+    {
+        "id": 3,
+        "name": "Full Third Party, Fire and Theft Cover",
+        "description": "This is an extension of third party insurance. It provides the following additional cover: loss of or damage to the insured vehicle due to fire, theft of the vehicle and/or accessories, and damage to the vehicle due to attempted theft. Third party liability cover is the same as with ordinary Third Party Cover but the vehicle owner can increase these limits at an additional premium. Accidental damage to your own vehicle is excluded with this policy as cover for the insured vehicle is restricted to fire and theft only. However, we would urge you to go beyond just price and decide whether a Third Party, Fire and Theft policy provides enough cover for you. If you have an expensive car then it may be better to obtain Comprehensive Cover. If you have an inexpensive car, Third Party Fire and Theft might be enough cover for you."
+    },
+    
+    {
+        "id" : 4,
+        "name" : "Laid Up Cover",
+        "description" : "It is just as important, no matter what its value, for your vehicle to be properly insured even if for any reason it is not on the road, including when it is off the road for repair or restoration. We call this a Laid Up – Accidental Damage, Fire and Theft Policy. It is ideal for owners who have declared their vehicle for a licensing exemption due to its being off the road.We understand that there is an array of reasons why you may want to keep your vehicle off the road, whilst also keeping it properly insured. Cover arranged by Zimnat Insurance will protect your vehicle, its parts and accessories whilst it is laid up. So, if a toolbox falling from a shelf bashes your bonnet or if you find that your engine bay has become a retreat for rodents, a Laid Up Policy arranged by Zimnat Insurance will offer you peace of mind in even the most unanticipated situation. Any vehicle, new or old, can qualify for Laid Up Cover as long as it is garaged, parked in your drive or stored in a secure building.The cover includes cover for accidental damage and for fire and theft.  Premiums reflect the fact that you are not driving."
+    },
+    {
+        "id" : 5,
+        "name" : "Comprehensive Cover",
+        "description" : "Covers you for damage caused to other drivers, road users or property and, importantly, to your own car. Making a claim for the repair of damage to your own car and making a claim for an accident that was your fault are the two biggest advantages of a comprehensive policy.Motor vehicle comprehensive insurance is sometimes referred to as Full Cover, as it covers all accidental loss or damage to the insured motor vehicle, as well as passenger risks and third party liability. It includes all the cover provided under a third party policy but in addition provides cover for accidental loss of or damage to the insured vehicle."
+    }
+]

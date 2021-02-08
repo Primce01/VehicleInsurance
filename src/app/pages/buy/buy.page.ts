@@ -1,0 +1,53 @@
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PaymentService } from 'src/app/providers/payment.service';
+import { VehiclesService } from 'src/app/providers/vehicles.service';
+
+@Component({
+  selector: 'app-buy',
+  templateUrl: './buy.page.html',
+  styleUrls: ['./buy.page.scss'],
+})
+export class BuyPage implements OnInit {
+  makes: any[];
+  make: any;
+  model: any;
+
+  form: FormGroup = new FormGroup({
+    vehicle_id: new FormControl('', Validators.required),
+       freq: new FormControl(''),
+    method: new FormControl(''),
+    type: new FormControl(''),
+    vehicle: new FormControl(''),
+    licence: new FormControl(''),
+  })
+  vehicles: any[];
+  payment: any;
+  
+  constructor( 
+    private vehicleService: VehiclesService,
+    private paymentService: PaymentService,
+    private router: Router,
+    private route: ActivatedRoute,
+    ) { }
+
+    ngOnInit() {
+      this.paymentService.getpayments().subscribe(data=> {
+        this.payment= data;
+      })
+    this.vehicleService.getVehicles().subscribe(data=> {
+      this.vehicles= data;
+    })
+  
+   }
+  
+  onSubmit() {
+    console.log(this.form.value);
+    this.paymentService.updatePayment(this.form.value)
+    this.form.reset();
+    this.router.navigateByUrl('buy-insu');
+  
+
+}
+}

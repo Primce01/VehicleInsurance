@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>User login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <img src="assets/images/car.png" alt="">
+    <ion-item>
+      <ion-label>Email :</ion-label>
+      <ion-input formControlName="email" placeholder="primcet@gmail.com"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+  </form>
+</ion-content>
+<ion-footer class="ion-padding">
+  <ion-button (click)="onSubmit()" size="block">Login</ion-button>
+</ion-footer>

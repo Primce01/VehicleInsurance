@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{policy?.name || 'Loading...'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p class="ion-padding-start ion-padding-end">{{policy?.description}}</p>
+</ion-content>
+
+<ion-footer class="ion-padding">
+  <ion-button size="block">Get Policy</ion-button>
+</ion-footer>

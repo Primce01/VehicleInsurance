@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="assets/images/car.png" alt="">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card routerLink="/buy">
+          
+          <ion-card-header class="ion-text-center">
+            <ion-icon name="cash-outline"></ion-icon>
+            <ion-card-title>Buy Insurance</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card routerLink="/policy-list">
+          <ion-card-header class="ion-text-center">
+            <ion-icon name="flask-outline"></ion-icon>
+            <ion-card-title>View Polices</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card routerLink="/claims">
+          <ion-card-header class="ion-text-center">
+            <ion-icon name="create-outline"></ion-icon>
+            <ion-card-title>Make Claim</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card routerLink="/vehicles">
+          <ion-card-header class="ion-text-center">
+            <ion-icon name="car-outline"></ion-icon>
+            <ion-card-title>Vehicles</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

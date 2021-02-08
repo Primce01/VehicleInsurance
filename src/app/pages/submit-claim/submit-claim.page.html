@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>submit-claim</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+<ion-list>
+  <ion-item>
+    <ion-input formControlName="name" placeholder="Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea formControlName="date" placeholder="Date of Incident(DD/MM/YYYY)"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-textarea formControlName="where" placeholder="Where the incident happened"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-textarea formControlName="make" placeholder="Make and Model eg Honda Fit"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-textarea formControlName="email" placeholder="Email eg primcet@gmail.com"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-textarea formControlName="brief" placeholder="Brief description of what transpired"></ion-textarea>
+  </ion-item>
+</ion-list>
+</form>
+</ion-content>
+<ion-footer class="ion-padding">
+  <ion-button [disabled]="form.invalid" size="block" (click)="onSubmit()">Submit Claim</ion-button>
+</ion-footer>
+
