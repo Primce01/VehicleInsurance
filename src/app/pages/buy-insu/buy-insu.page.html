@@ -8,35 +8,37 @@
 </ion-header>
 
 <ion-content>
+ 
   <ion-list>
     <ion-item routerLink="/buy"> </ion-item>
- <ion-item>
+ <ion-item >
       <ion-label>Make</ion-label>
-      {{payments?.vehicle_id}}
+      {{payment?.vehicle_id}}
+   
     </ion-item>
 
     <ion-item>
      <ion-label>Insurance Frequency</ion-label>
-     {{payments?.freq}}
+     {{payment?.freq}}
    </ion-item>
  
  <ion-item>
      <ion-label>Payment Method</ion-label>
-     {{payments?.method}}
+     {{payment?.method}}
    </ion-item>
 
    <ion-item>
      <ion-label>Insurance Type</ion-label>
-     {{payments?.type}}
+     {{payment?.type}}
    </ion-item>
    <ion-item>
     <ion-label>Vehicle Type</ion-label>
-    {{payments?.Vehicle}}
+    {{payment?.Vehicle}}
   </ion-item>
  
  <ion-item>
      <ion-label>Licence Frequency</ion-label>
-     {{payments?.licence}}
+     {{payment?.licence}}
    </ion-item>
 
    </ion-list>

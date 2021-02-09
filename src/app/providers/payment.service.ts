@@ -12,17 +12,17 @@ export class PaymentService {
     private firestore: AngularFirestore,
     private authService: AuthService,
     ) { }
-    getpayments() {
+    getPayments() {
       return this.authService.getUser().pipe(
         switchMap((user: any) => {
-          return this.firestore.collection('vehicles', ref => ref.where('user_id', '==', user.uid)).valueChanges();
+          return this.firestore.collection('payments', ref => ref.where('user_id', '==', user.uid)).valueChanges();
         })
         )
       }
+      getPayment(payment) {
+        return this.firestore.collection('payments').doc(payment).valueChanges();
+      }
   
-  getVehicle(vehicle_id) {
-    return this.firestore.collection('vehicles').doc(vehicle_id).valueChanges();
-  }
   async updatePayment(payment: any) {
     if (!payment.id) payment.id = this.firestore.createId();
     const user = await this.authService.getUser().pipe(first()).toPromise();

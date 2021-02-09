@@ -16,11 +16,11 @@ export class BuyPage implements OnInit {
 
   form: FormGroup = new FormGroup({
     vehicle_id: new FormControl('', Validators.required),
-       freq: new FormControl(''),
-    method: new FormControl(''),
-    type: new FormControl(''),
-    vehicle: new FormControl(''),
-    licence: new FormControl(''),
+       freq: new FormControl('', Validators.required),
+    method: new FormControl('', Validators.required),
+    type: new FormControl('', Validators.required),
+    vehicle: new FormControl('', Validators.required),
+    licence: new FormControl('', Validators.required),
   })
   vehicles: any[];
   payment: any;
@@ -33,7 +33,9 @@ export class BuyPage implements OnInit {
     ) { }
 
     ngOnInit() {
-      this.paymentService.getpayments().subscribe(data=> {
+      
+      this.paymentService.getPayments().subscribe(data=> {
+        console.log(data)
         this.payment= data;
       })
     this.vehicleService.getVehicles().subscribe(data=> {

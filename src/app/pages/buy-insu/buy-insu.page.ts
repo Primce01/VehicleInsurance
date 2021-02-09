@@ -11,8 +11,7 @@ import { PaymentService } from 'src/app/providers/payment.service';
 })
 export class BuyInsuPage implements OnInit {
   payment: any;
-  
-
+ payments: any;
   constructor(
     private paymentService: PaymentService,
     private route: ActivatedRoute,
@@ -20,11 +19,11 @@ export class BuyInsuPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    const { data } = this.route.snapshot.params;
-    console.log(data);
-    this.paymentService.getpayments().subscribe(data => {
+    const {payment } = this.route.snapshot.params;
+    console.log();
+    this.paymentService.getPayment(payment).subscribe(data => {
       console.log(data);
-      this.payment = data;
+      this.payment = data;  
     })
    }
   
