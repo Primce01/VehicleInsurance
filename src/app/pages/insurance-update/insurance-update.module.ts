@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BuyPageRoutingModule } from './buy-routing.module';
+import { InsuranceUpdatePageRoutingModule } from './insurance-update-routing.module';
 
-import { BuyPage } from './buy.page';
+import { InsuranceUpdatePage } from './insurance-update.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { BuyPage } from './buy.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    BuyPageRoutingModule
+    InsuranceUpdatePageRoutingModule
   ],
-  declarations: [BuyPage]
+  declarations: [InsuranceUpdatePage]
 })
-export class BuyPageModule {}
+export class InsuranceUpdatePageModule {}

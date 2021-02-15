@@ -50,10 +50,10 @@ const routes: Routes = [
     path: 'vehicles',
     loadChildren: () => import('./pages/vehicles/vehicles.module').then( m => m.VehiclesPageModule)
   },
-  {
-    path: 'buy',
-    loadChildren: () => import('./pages/buy/buy.module').then( m => m.BuyPageModule)
-  },
+  // {
+  //   path: 'buy',
+  //   loadChildren: () => import('./pages/buy/buy.module').then( m => m.BuyPageModule)
+  // },
   {
     path: 'landing',
     loadChildren: () => import('./pages/landing/landing.module').then( m => m.LandingPageModule)
@@ -107,17 +107,17 @@ const routes: Routes = [
     loadChildren: () => import('./pages/submit-claim/submit-claim.module').then( m => m.SubmitClaimPageModule)
   },
   {
-    path: 'buy-insu',
-    loadChildren: () => import('./pages/buy-insu/buy-insu.module').then( m => m.BuyInsuPageModule)
+    path: 'insurance-update',
+    loadChildren: () => import('./pages/insurance-update/insurance-update.module').then( m => m.InsuranceUpdatePageModule)
   },
   {
     path: 'downloads',
     loadChildren: () => import('./pages/downloads/downloads.module').then( m => m.DownloadsPageModule)
   },
-  // {
-  //   path: 'profile-details',
-  //   loadChildren: () => import('./pages/profile-details/profile-details.module').then( m => m.ProfileDetailsPageModule)
-  // },
+  {
+    path: 'insurance-details',
+    loadChildren: () => import('./pages/insurance-details/insurance-details.module').then( m => m.InsuranceDetailsPageModule)
+  },
 
 ];
 

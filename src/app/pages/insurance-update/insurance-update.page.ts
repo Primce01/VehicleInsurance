@@ -3,13 +3,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PaymentService } from 'src/app/providers/payment.service';
 import { VehiclesService } from 'src/app/providers/vehicles.service';
-
 @Component({
-  selector: 'app-buy',
-  templateUrl: './buy.page.html',
-  styleUrls: ['./buy.page.scss'],
+  selector: 'app-insurance-update',
+  templateUrl: './insurance-update.page.html',
+  styleUrls: ['./insurance-update.page.scss'],
 })
-export class BuyPage implements OnInit {
+export class InsuranceUpdatePage implements OnInit {
   [x: string]: any;
   makes: any[];
   make: any;
@@ -25,7 +24,6 @@ export class BuyPage implements OnInit {
   })
   vehicles: any[];
   payment: any;
-
   constructor(
     private vehicleService: VehiclesService,
     private paymentService: PaymentService,
@@ -34,7 +32,7 @@ export class BuyPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.paymentService.getPayment('payment_id').subscribe(data => {
+    this.paymentService.getPayment(this.payment).subscribe(data => {
       console.log(data)
       this.payment = data;
     })
@@ -47,6 +45,6 @@ export class BuyPage implements OnInit {
     console.log(this.form.value);
     this.paymentService.updatePayment(this.form.value)
     this.form.reset();
-    this.router.navigateByUrl('buy-insu');
+    this.router.navigateByUrl('insurance-details');
   }
 }
