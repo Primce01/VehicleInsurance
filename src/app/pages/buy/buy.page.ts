@@ -10,13 +10,14 @@ import { VehiclesService } from 'src/app/providers/vehicles.service';
   styleUrls: ['./buy.page.scss'],
 })
 export class BuyPage implements OnInit {
+  [x: string]: any;
   makes: any[];
   make: any;
   model: any;
-
+  
   form: FormGroup = new FormGroup({
     vehicle_id: new FormControl('', Validators.required),
-       freq: new FormControl('', Validators.required),
+    freq: new FormControl('', Validators.required),
     method: new FormControl('', Validators.required),
     type: new FormControl('', Validators.required),
     vehicle: new FormControl('', Validators.required),
@@ -24,32 +25,28 @@ export class BuyPage implements OnInit {
   })
   vehicles: any[];
   payment: any;
-  
-  constructor( 
+
+  constructor(
     private vehicleService: VehiclesService,
     private paymentService: PaymentService,
     private router: Router,
     private route: ActivatedRoute,
-    ) { }
+  ) { }
 
-    ngOnInit() {
-      
-      this.paymentService.getPayments().subscribe(data=> {
-        console.log(data)
-        this.payment= data;
-      })
-    this.vehicleService.getVehicles().subscribe(data=> {
-      this.vehicles= data;
+  ngOnInit() {
+    this.paymentService.getPayment('payment_id').subscribe(data => {
+      console.log(data)
+      this.payment = data;
     })
-  
-   }
-  
+    this.vehicleService.getVehicles().subscribe(data => {
+      this.vehicles = data;
+    })
+  }
+
   onSubmit() {
     console.log(this.form.value);
     this.paymentService.updatePayment(this.form.value)
     this.form.reset();
     this.router.navigateByUrl('buy-insu');
-  
-
-}
+  }
 }

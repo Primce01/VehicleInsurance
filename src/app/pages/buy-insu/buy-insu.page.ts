@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { VehiclesService } from 'src/app/providers/vehicles.service';
 import { PaymentService } from 'src/app/providers/payment.service';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-buy-insu',
@@ -10,8 +12,10 @@ import { PaymentService } from 'src/app/providers/payment.service';
   styleUrls: ['./buy-insu.page.scss'],
 })
 export class BuyInsuPage implements OnInit {
-  payment: any;
+  hero = 'Primce'
+  payment:any = 'payment_id'
  payments: any;
+  getPayment: any;
   constructor(
     private paymentService: PaymentService,
     private route: ActivatedRoute,
@@ -19,11 +23,11 @@ export class BuyInsuPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    const {payment } = this.route.snapshot.params;
-    console.log();
-    this.paymentService.getPayment(payment).subscribe(data => {
-      console.log(data);
-      this.payment = data;  
+      const { payment_id } = this.route.snapshot.params;
+console.log(payment_id);
+this.paymentService.getPayment(payment_id).subscribe(data => {
+  console.log(data);
+  this.payment = data;
     })
    }
   

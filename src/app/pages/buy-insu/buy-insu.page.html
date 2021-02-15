@@ -8,38 +8,38 @@
 </ion-header>
 
 <ion-content>
- 
+{{hero}}
   <ion-list>
     <ion-item routerLink="/buy"> </ion-item>
- <ion-item >
+    <ion-item>
       <ion-label>Make</ion-label>
       {{payment?.vehicle_id}}
-   
     </ion-item>
 
     <ion-item>
-     <ion-label>Insurance Frequency</ion-label>
-     {{payment?.freq}}
-   </ion-item>
- 
- <ion-item>
-     <ion-label>Payment Method</ion-label>
-     {{payment?.method}}
-   </ion-item>
+      <ion-label>Insurance Frequency</ion-label>
+      {{payment?.freq}}
+    </ion-item>
 
-   <ion-item>
-     <ion-label>Insurance Type</ion-label>
-     {{payment?.type}}
-   </ion-item>
-   <ion-item>
-    <ion-label>Vehicle Type</ion-label>
-    {{payment?.Vehicle}}
-  </ion-item>
- 
- <ion-item>
-     <ion-label>Licence Frequency</ion-label>
-     {{payment?.licence}}
-   </ion-item>
+    <ion-item>
+      <ion-label>Payment Method</ion-label>
+      {{payment?.method}}
+    </ion-item>
 
-   </ion-list>
+    <ion-item>
+      <ion-label>Insurance Type</ion-label>
+      {{payment?.type}}
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Vehicle Type</ion-label>
+      {{payment?.Vehicle}}
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Licence Frequency</ion-label>
+      {{payment?.licence}}
+    </ion-item>
+
+  </ion-list>
 </ion-content>
