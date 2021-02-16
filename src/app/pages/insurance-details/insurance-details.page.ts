@@ -11,18 +11,18 @@ import { switchMap } from 'rxjs/operators'
   styleUrls: ['./insurance-details.page.scss'],
 })
 export class InsuranceDetailsPage implements OnInit {
-  payment:any = 'payment_id'
+  insurance: any 
   constructor(
     private paymentService: PaymentService,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    const { payment_id } = this.route.snapshot.params;
-console.log(payment_id);
-this.paymentService.getPayment(payment_id).subscribe(data => {
+    const { insurance_id } = this.route.snapshot.params;
+console.log(insurance_id);
+this.paymentService.getPayment(insurance_id).subscribe(data => {
 console.log(data);
-this.payment = data;
+this.insurance = data;
   })
  }
 

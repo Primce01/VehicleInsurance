@@ -12,7 +12,7 @@
 <ion-item-divider>Select Vehicle</ion-item-divider>
 <ion-item>
   <ion-label>Select Vehicle Make</ion-label>
-  <ion-select formControlName= "vehicle_id" cancelText="Cancel" okText="Ok">
+  <ion-select formControlName= "vehicle_name" cancelText="Cancel" okText="Ok">
  <ion-select-option *ngFor="let vehicle of vehicles" [value]="vehicle.id">{{vehicle.make_name}}</ion-select-option>
 
 </ion-select>

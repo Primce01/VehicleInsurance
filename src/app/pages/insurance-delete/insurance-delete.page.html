@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Delete Insurance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<p class="ion-text-center">Are you sure you want to delete this vehicle</p>
+<p class="ion-text-center"><b class="ion-text-center">{{insurance?.vehicle_name}}</b></p>
+</ion-content>
+
+<ion-footer class="ion-padding">
+  <ion-button (click)="onDelete()" size="full">Delete</ion-button>
+</ion-footer>

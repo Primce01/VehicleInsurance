@@ -13,13 +13,18 @@ export class PaymentService {
     private authService: AuthService,
   ) { }
 
-  getPayment(payment_id) {
-    return this.firestore.collection('payments').doc(payment_id).valueChanges();
+  getPayment(insurance_id) {
+    return this.firestore.collection('payments').doc(insurance_id).valueChanges();
   }
   
-  async updatePayment(payment: any) {
-    if (!payment.id) payment.id = this.firestore.createId();
+  
+  async updatePayment(insurance: any) {
+    if (!insurance.id) insurance.id = this.firestore.createId();
     const user = await this.authService.getUser().pipe(first()).toPromise();
-    this.firestore.collection('payments').doc(payment.id).set({ ...payment, user_id: user.uid });
+    this.firestore.collection('payments').doc(insurance.id).set({ ...insurance, user_id: user.uid });
   }
+
+deletePayment(insurance_id) {
+  this.firestore.collection('payments').doc(insurance_id).delete();
+}
 }

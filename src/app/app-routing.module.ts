@@ -58,6 +58,7 @@ const routes: Routes = [
     path: 'landing',
     loadChildren: () => import('./pages/landing/landing.module').then( m => m.LandingPageModule)
   },
+ 
   // {
   //   // path: 'login',
   //   // loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
@@ -117,6 +118,14 @@ const routes: Routes = [
   {
     path: 'insurance-details',
     loadChildren: () => import('./pages/insurance-details/insurance-details.module').then( m => m.InsuranceDetailsPageModule)
+  },
+  {
+    path: 'insurance-list',
+    loadChildren: () => import('./pages/insurance-list/insurance-list.module').then( m => m.InsuranceListPageModule)
+  },
+  {
+    path: 'insurance-delete',
+    loadChildren: () => import('./pages/insurance-delete/insurance-delete.module').then( m => m.InsuranceDeletePageModule)
   },
 
 ];

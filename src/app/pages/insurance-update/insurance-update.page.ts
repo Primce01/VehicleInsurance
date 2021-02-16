@@ -15,7 +15,7 @@ export class InsuranceUpdatePage implements OnInit {
   model: any;
   
   form: FormGroup = new FormGroup({
-    vehicle_id: new FormControl('', Validators.required),
+    vehicle_name: new FormControl('', Validators.required),
     freq: new FormControl('', Validators.required),
     method: new FormControl('', Validators.required),
     type: new FormControl('', Validators.required),
@@ -32,10 +32,10 @@ export class InsuranceUpdatePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.paymentService.getPayment(this.payment).subscribe(data => {
-      console.log(data)
-      this.payment = data;
-    })
+    // this.paymentService.getPayment(this.payment).subscribe(data => {
+    //   console.log(data)
+    //   this.payment = data;
+    // })
     this.vehicleService.getVehicles().subscribe(data => {
       this.vehicles = data;
     })
@@ -45,6 +45,6 @@ export class InsuranceUpdatePage implements OnInit {
     console.log(this.form.value);
     this.paymentService.updatePayment(this.form.value)
     this.form.reset();
-    this.router.navigateByUrl('insurance-details');
+    this.router.navigateByUrl('insurance-list');
   }
 }
