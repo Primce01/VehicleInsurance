@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
-import { PaymentService } from 'src/app/providers/payment.service';
+import { InsuranceService } from 'src/app/providers/insurance.service';
 import { VehiclesService } from 'src/app/providers/vehicles.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { VehiclesService } from 'src/app/providers/vehicles.service';
 export class InsuranceDeletePage implements OnInit {
 insurance: any
   constructor(
-    private paymentService: PaymentService,
+    private insuranceService: InsuranceService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -20,7 +20,7 @@ insurance: any
   ngOnInit() {
     this.route.params.pipe(
       switchMap(params =>{
-        return this.paymentService.getPayment(params.insurance_id)
+        return this.insuranceService.getInsurance(params.insurance_id)
       }),
     ).subscribe(data=> {
       console.log(data);
@@ -28,7 +28,7 @@ insurance: any
     })
   }
 onDelete(){
-  this.paymentService.deletePayment(this.insurance.id);
+  this.insuranceService.deleteInsurance(this.insurance.id);
   this.router.navigateByUrl('/insurance-list')
 }
 }

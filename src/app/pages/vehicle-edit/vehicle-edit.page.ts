@@ -74,6 +74,9 @@ export class VehicleEditPage implements OnInit {
     })
     this.model_id.valueChanges.subscribe(data => {
       console.log(data);
+      this.carService.getModel(data).subscribe(model => {
+        console.log(model);
+      })
       if (this.make)
         this.model = this.make.models.find(m => m.id === data);
       if (this.model)

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PaymentService } from 'src/app/providers/payment.service';
+import { InsuranceService } from 'src/app/providers/insurance.service';
+
 
 @Component({
   selector: 'app-insurance-list',
@@ -9,16 +10,16 @@ import { PaymentService } from 'src/app/providers/payment.service';
 })
 export class InsuranceListPage implements OnInit {
   [x: string]: any;
-insurance: any;
+  insurances:any[];
   constructor(
-    private paymentService: PaymentService,
+    private insuranceService: InsuranceService,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.paymentService.getPayment(this.insurance).subscribe(data => {
+    this.insuranceService.getInsurances().subscribe(data => {
       console.log(data);
-      this.insurance = data;
+      this.insurances= data;
     })
   }
 }

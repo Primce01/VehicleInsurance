@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { InsuranceDeletePage } from './insurance-delete.page';
+import { InsuranceAddPage } from './insurance-add.page';
 
 const routes: Routes = [
   {
-    path: ':insurance_id',
-    component: InsuranceDeletePage
+    path: '',
+    component: InsuranceAddPage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class InsuranceDeletePageRoutingModule {}
+export class InsuranceAddPageRoutingModule {}

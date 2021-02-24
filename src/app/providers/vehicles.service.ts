@@ -8,6 +8,9 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class VehiclesService {
+  getVehicleUses() {
+    throw new Error('Method not implemented.');
+  }
   
   items: Observable<any[]>;
   constructor(

@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "name": "Private Car-Private Use"  
+    },
+    {
+        "id": 2,
+        "name": "Private car-Bussiness Use"  
+    },
+    {
+        "id": 3,
+        "name": "Private car-Fleet"  
+    },
+
+    {
+        "id": 4,
+        "name": "Private car-Private hire(Car Hire)"  
+    },
+    {
+        "id": 5,
+        "name": "Private car-Driving School"  
+    },
+    {
+        "id": 6,
+        "name": "Trailer-Domestic Trailers"  
+    },
+
+    {
+        "id": 7,
+        "name": "Trailers-Caravans"  
+    },
+    {
+        "id": 8,
+        "name": "Commercial Vehicle-Own use"  
+    },
+    {
+        "id": 9,
+        "name": "Commercial Vehicle-Own Use"  
+    },
+
+    {
+        "id": 10,
+        "name": "Commercial Vehicle-Hire and Reward"  
+    },
+    {
+        "id": 11,
+        "name": "Commercial Vehicle-Fleet-Own Use"  
+    },
+    {
+        "id": 12,
+        "name": "Commercial Vehicle-Fleet-Hire and Reward"  
+    },
+
+    {
+        "id": 13,
+        "name": "Commercial Vehicle-Driving School"  
+    },
+    {
+        "id": 14,
+        "name": "Taxis-Public Hire"  
+    },
+    {
+        "id": 15,
+        "name": "Commmercial Trailers-Own Use"  
+    },
+
+    {
+        "id": 16,
+        "name": "Commmercial Trailers-Hire and Reward"  
+    },
+    {
+        "id": 17,
+        "name": "Commmercial Trailers-Fleet-Own Use"  
+    },
+    {
+        "id": 18,
+        "name": "Commmercial Trailers-Fleet-Hire and Reward"  
+    },
+
+    {
+        "id": 19,
+        "name": "Commmercial Trailers-Agriculture"  
+    },
+    {
+        "id": 20,
+        "name": "Motor Cycle-SDP use"  
+    },
+    {
+        "id": 21,
+        "name": "Motor Cycle-Bussiness Use"  
+    },
+    {
+        "id": 22,
+        "name": "Motor Cycle-Fleet"  
+    },
+    {
+        "id": 23,
+        "name": "Omnibus and Commuters-Up to 30 seats"  
+    },
+
+    {
+        "id": 24,
+        "name": "Omnibus and Commuters-31-60 seats"  
+    },
+    {
+        "id": 25,
+        "name": "Omnibus and Commuters-More than 60seats"  
+    },
+    {
+        "id": 26,
+        "name": "School Bus-Up to 30 seats"  
+    },
+    {
+        "id": 27,
+        "name": "School bus-31-60 seats"  
+    },
+    {
+        "id": 28,
+        "name": "School bus-More than 60 seats"  
+    },
+
+    {
+        "id": 29,
+        "name": "Staff bus-Upto 30 seats"  
+    },
+    {
+        "id": 30,
+        "name": "Staff bus-31-60"  
+    },
+    {
+        "id": 31,
+        "name": "Staff bus-More than 60"  
+    },
+    {
+        "id": 32,
+        "name": "Tractors/Fork lifts-Own use"  
+    },
+    {
+        "id": 33,
+        "name": "Tractors-Hire and Reward"  
+    },
+    {
+        "id": 34,
+        "name": "Tractors/Combines-Agriculture-Own Use"  
+    },
+    {
+        "id": 35,
+        "name": "Tractors/Combines-Agriculture-Hire and Reward"  
+    },
+    {
+        "id": 36,
+        "name": "Ambulance,Fire Engines,Hearse-Various"  
+    },
+    {
+        "id": 37,
+        "name": "Agricultural Implements-Various"  
+    },
+    {
+        "id": 38,
+        "name": "Special Types-Contractors plant and Equipement"  
+    }
+]

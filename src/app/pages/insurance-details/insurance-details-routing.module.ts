@@ -5,7 +5,7 @@ import { InsuranceDetailsPage } from './insurance-details.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':insurance_id',
     component: InsuranceDetailsPage
   }
 ];

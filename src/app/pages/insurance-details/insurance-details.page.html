@@ -3,41 +3,40 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Insurance Details</ion-title>
+    <ion-title>{{insurance?.make_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item routerLink="/insurance-update/{{insurance}}"> </ion-item>
-   
-    <ion-item>
-      <ion-label>Make</ion-label>
-      {{insurance?.vehicle_name}}
+  
+    <ion-item routerLink="/insurance-list">
+      <ion-label>Make :</ion-label>
+      {{insurance?.make_name}}
     </ion-item>
 
     <ion-item>
-      <ion-label>Insurance Frequency</ion-label>
+      <ion-label>Insurance Frequency :</ion-label>
       {{insurance?.freq}}
     </ion-item>
 
     <ion-item>
-      <ion-label>Payment Method</ion-label>
+      <ion-label>Payment Method :</ion-label>
       {{insurance?.method}}
     </ion-item>
 
     <ion-item>
-      <ion-label>Insurance Type</ion-label>
+      <ion-label>Insurance Type :</ion-label>
       {{insurance?.type}}
     </ion-item>
     
     <ion-item>
-      <ion-label>Vehicle Type</ion-label>
-      {{insurance?.Vehicle}}
+      <ion-label>Vehicle Type :</ion-label>
+      {{insurance?.vehicle}}
     </ion-item>
 
     <ion-item>
-      <ion-label>Licence Frequency</ion-label>
+      <ion-label>Licence Frequency :</ion-label>
       {{insurance?.licence}}
     </ion-item>
 

@@ -127,6 +127,10 @@ const routes: Routes = [
     path: 'insurance-delete',
     loadChildren: () => import('./pages/insurance-delete/insurance-delete.module').then( m => m.InsuranceDeletePageModule)
   },
+  {
+    path: 'insurance-add',
+    loadChildren: () => import('./pages/insurance-add/insurance-add.module').then( m => m.InsuranceAddPageModule)
+  },
 
 ];
 

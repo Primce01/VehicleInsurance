@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PaymentService } from 'src/app/providers/payment.service';
+import { InsuranceService } from 'src/app/providers/insurance.service';
 import { VehiclesService } from 'src/app/providers/vehicles.service';
 @Component({
   selector: 'app-insurance-update',
@@ -15,7 +15,7 @@ export class InsuranceUpdatePage implements OnInit {
   model: any;
   
   form: FormGroup = new FormGroup({
-    vehicle_name: new FormControl('', Validators.required),
+    make_name: new FormControl('', Validators.required),
     freq: new FormControl('', Validators.required),
     method: new FormControl('', Validators.required),
     type: new FormControl('', Validators.required),
@@ -23,28 +23,26 @@ export class InsuranceUpdatePage implements OnInit {
     licence: new FormControl('', Validators.required),
   })
   vehicles: any[];
-  payment: any;
+  
   constructor(
     private vehicleService: VehiclesService,
-    private paymentService: PaymentService,
+    private insuranceService: InsuranceService,
     private router: Router,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    // this.paymentService.getPayment(this.payment).subscribe(data => {
-    //   console.log(data)
-    //   this.payment = data;
-    // })
+   
     this.vehicleService.getVehicles().subscribe(data => {
       this.vehicles = data;
     })
   }
+  
 
   onSubmit() {
     console.log(this.form.value);
-    this.paymentService.updatePayment(this.form.value)
+    this.insuranceService.updateInsurance(this.form.value)
     this.form.reset();
-    this.router.navigateByUrl('insurance-list');
+    this.router.navigateByUrl('insurance-details');
   }
 }

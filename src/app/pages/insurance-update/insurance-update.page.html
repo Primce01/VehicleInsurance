@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Buy Insurance</ion-title>
+    <ion-title>Update Insurance</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -11,13 +11,12 @@
      
 <ion-item-divider>Select Vehicle</ion-item-divider>
 <ion-item>
-  <ion-label>Select Vehicle Make</ion-label>
-  <ion-select formControlName= "vehicle_name" cancelText="Cancel" okText="Ok">
+  <ion-label>Select Vehicle</ion-label>
+  <ion-select formControlName= "make_name" cancelText="Cancel" okText="Ok">
  <ion-select-option *ngFor="let vehicle of vehicles" [value]="vehicle.id">{{vehicle.make_name}}</ion-select-option>
 
 </ion-select>
 </ion-item>
-
 
 <ion-item-divider>Insurance Details</ion-item-divider>
 <ion-item>
@@ -77,7 +76,7 @@
     <ion-select-option value="omnibus">Omnibus and Commuters-Up to 30 seats</ion-select-option>
     <ion-select-option value="commuter">Omnibus and Commuters-31-60 seats</ion-select-option>
     <ion-select-option value="commuters">Omnibus and Commuters-More than 60seats</ion-select-option>
-    <ion-select-option value="school">School Bus-Up to 30 seats</ion-select-option>
+    <ion-select-option value="school">School Bus-Up to 30 seats</ion-select-option> 
     <ion-select-option value="bus">School bus-31-60 seats</ion-select-option>
     <ion-select-option value="more">School bus-More than 60 seats</ion-select-option>
     <ion-select-option value="staff">Staff bus-Upto 30 seats</ion-select-option>
