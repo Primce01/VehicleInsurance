@@ -56,27 +56,21 @@ export class VehicleEditPage implements OnInit {
         return this.vehicleService.getVehicle(params.vehicle_id)
       })
     ).subscribe(data => {
-      console.log(data);
       this.vehicle = data;
       this.form.patchValue(data);
     });
 
     this.carService.getCars().subscribe((data: any[]) => {
-      console.log(data)
       this.makes = data;
     })
 
     this.make_id.valueChanges.subscribe(data => {
-      console.log(data);
       this.make = this.makes.find(c => c.id === data);
       if (this.make)
         this.make_name.patchValue(this.make.name);
     })
+
     this.model_id.valueChanges.subscribe(data => {
-      console.log(data);
-      this.carService.getModel(data).subscribe(model => {
-        console.log(model);
-      })
       if (this.make)
         this.model = this.make.models.find(m => m.id === data);
       if (this.model)

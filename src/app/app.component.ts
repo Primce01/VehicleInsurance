@@ -59,6 +59,11 @@ export class AppComponent implements OnInit {
       icon: 'person'
     },
     {
+      title: 'My Licences',
+      url: 'licence-list',
+      icon: 'receipt'
+    },
+    {
       title: 'My Vehicles',
       url: 'vehicles',
       icon: 'car-sport'

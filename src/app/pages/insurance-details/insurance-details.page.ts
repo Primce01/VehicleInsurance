@@ -12,12 +12,6 @@ import { InsuranceService } from 'src/app/providers/insurance.service';
 export class InsuranceDetailsPage implements OnInit {
   insurance: any
 
-  options = {
-    '4months': '4 months',
-    '6months': '6 months',
-    'year': '1 Year'
-  }
-
   constructor(
     private insuranceService: InsuranceService,
     private route: ActivatedRoute,

@@ -21,7 +21,5 @@ export class CarService {
     )
   }
 
-  getModel(model_id){
-    return this.http.get(`http://localhost:3000/api/models/${model_id}`)
-  }
+  
 }

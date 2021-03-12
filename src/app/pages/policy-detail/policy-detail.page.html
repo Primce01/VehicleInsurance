@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <p class="ion-padding-start ion-padding-end">{{policy?.description}}</p>
+  <p class="ion-padding-start ion-padding-end" *ngFor="let description of descriptions">{{description}}</p>
 </ion-content>
 
 <ion-footer class="ion-padding">

@@ -6,16 +6,30 @@
 
 <ion-content>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <img src="assets/images/car.png" alt="">
-  <ion-item>
-    <ion-label>Email :</ion-label>
-    <ion-input  formControlName="email" placeholder="primcet@gmail.com"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Password:</ion-label>
-    <ion-input type="password" formControlName="password"></ion-input>
-  </ion-item>
-</form>
+    <img src="assets/images/car.png" alt="">
+
+    <ion-item>
+      <ion-label>Name :</ion-label>
+      <ion-input formControlName="name" placeholder="first name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Surname :</ion-label>
+      <ion-input formControlName="email" placeholder="surname"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Email :</ion-label>
+      <ion-input formControlName="email" placeholder="primcet@gmail.com"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+
+  </form>
 </ion-content>
 <ion-footer class="ion-padding">
   <ion-button [disabled]="form.invalid" (click)="onSubmit()" size="block">Register</ion-button>

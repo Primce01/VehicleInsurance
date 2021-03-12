@@ -10,6 +10,7 @@ import { PolicyService } from 'src/app/providers/policy.service';
 export class PolicyDetailPage implements OnInit {
 
   policy: any;
+  descriptions: string[];
 
   constructor(
     private route: ActivatedRoute,
@@ -18,13 +19,10 @@ export class PolicyDetailPage implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(data => {
-      console.log(data)
-      console.log(data.policy_id)
-      this.policyService.getPolicy(data.policy_id).subscribe(data1 => {
-        console.log(data1)
+      this.policyService.getPolicy(data.policy_id).subscribe((data1: any) => {
         this.policy = data1;
+        this.descriptions = data1.description.split('\n')
       })
     });
   }
-
 }

@@ -24,6 +24,9 @@ getInsurance(insurance_id) {
   return this.firestore.collection('insurance').doc(insurance_id).valueChanges();
 }
 
+getVehicleInsurance(vehicle_id) {
+  return this.firestore.collection('insurance', ref => ref.where('vehicle_id', '==', vehicle_id)).valueChanges();
+}
 
 async updateInsurance(insurance: any) {
   if (!insurance.id) insurance.id = this.firestore.createId();

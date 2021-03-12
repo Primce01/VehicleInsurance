@@ -18,8 +18,7 @@
     <ion-item-sliding  *ngFor="let insurance of insurances">
 
       <ion-item lines="full" routerLink="/insurance-details/{{insurance.id}}">
-        <!-- <ion-note slot="start">{{insurance1}}</ion-note> -->
-        <ion-label >{{insurance.make_name}}</ion-label>
+        <ion-label>{{insurance.vehicle_name}}</ion-label>
       </ion-item>
 
       <ion-item-options side="end"> 

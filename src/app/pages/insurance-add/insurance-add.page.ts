@@ -26,11 +26,12 @@ export class InsuranceAddPage implements OnInit {
     
     form: FormGroup = new FormGroup({
     
-      make_name: new FormControl('', Validators.required),
+      vehicle_id: new FormControl('', Validators.required),
+      vehicle_name: new FormControl('',Validators.required),
       freq: new FormControl('', Validators.required),
       method: new FormControl('', Validators.required),
       type: new FormControl('', Validators.required),
-      vehicle: new FormControl('', Validators.required),
+      vehicle_use: new FormControl('', Validators.required),
       licence: new FormControl('', Validators.required),
     })
     vehicles: any[];
@@ -49,6 +50,12 @@ export class InsuranceAddPage implements OnInit {
     ) { }
   
     ngOnInit() {
+      this.form.get("vehicle_id").valueChanges.subscribe(id => {
+        console.log(id)
+        console.log(this.vehicles)
+        const vehicle = this.vehicles.find(v => v.id === id);
+        this.form.get("vehicle_name").patchValue(vehicle.make_name + ' ' + vehicle.model_name)
+      })
      
       this.vehicleuseService.getVehicleUses().subscribe((data: any[]) => {
         console.log(data);
@@ -74,6 +81,7 @@ export class InsuranceAddPage implements OnInit {
     
       this.vehicleService.getVehicles().subscribe(data => {
         this.vehicles = data;
+        console.log(data)
         
       })
     
@@ -83,7 +91,6 @@ export class InsuranceAddPage implements OnInit {
     onSubmit() {
       console.log(this.form.value);
       this.insuranceService.updateInsurance(this.form.value)
-      this.form.reset();
       this.router.navigateByUrl('insurance-list');
     }
   }  

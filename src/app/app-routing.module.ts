@@ -131,6 +131,23 @@ const routes: Routes = [
     path: 'insurance-add',
     loadChildren: () => import('./pages/insurance-add/insurance-add.module').then( m => m.InsuranceAddPageModule)
   },
+  
+  {
+    path: 'licence-list',
+    loadChildren: () => import('./pages/licence-list/licence-list.module').then( m => m.LicenceListPageModule)
+  },
+  {
+    path: 'licence-add',
+    loadChildren: () => import('./pages/licence-add/licence-add.module').then( m => m.LicenceAddPageModule)
+  },
+  {
+    path: 'licence-details',
+    loadChildren: () => import('./pages/licence-details/licence-details.module').then( m => m.LicenceDetailsPageModule)
+  },
+  {
+    path: 'payment',
+    loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
+  },
 
 ];
 
