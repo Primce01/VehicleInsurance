@@ -2,16 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InvoiceService } from 'src/app/providers/invoice.service';
-import { ModelService } from 'src/app/providers/model.service';
 import { PaymentService } from 'src/app/providers/payment.service';
 
-
 @Component({
-  selector: 'app-payment',
-  templateUrl: './payment.page.html',
-  styleUrls: ['./payment.page.scss'],
+  selector: 'app-insurance-payment',
+  templateUrl: './insurance-payment.page.html',
+  styleUrls: ['./insurance-payment.page.scss'],
 })
-export class PaymentPage implements OnInit {
+export class InsurancePaymentPage implements OnInit {
   invoice: any;
   form: FormGroup = new FormGroup({
     phone: new FormControl('', [Validators.required, Validators.min(771000000), Validators.max(789000000)]),
@@ -36,14 +34,11 @@ export class PaymentPage implements OnInit {
   get vehicle_name() {
     return this.form.get('vehicle_name')
   }
-
   constructor(
-    private router: Router,
-    private modelService: ModelService,
     private paymentService: PaymentService,
     private invoiceService: InvoiceService,
+    private router: Router,
     private route: ActivatedRoute,
-
   ) { }
 
   ngOnInit() {
@@ -62,7 +57,6 @@ export class PaymentPage implements OnInit {
   async onSubmit() {
     const responce = await this.paymentService.addPayment(this.form.value)
     console.log(responce)
-    this.router.navigateByUrl('/licence-list');
+    this.router.navigateByUrl('/insurance-list');
   }
 }
-
