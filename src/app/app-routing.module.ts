@@ -153,6 +153,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/insurance-payment/insurance-payment.module').then( m => m.InsurancePaymentPageModule)
   },
 
+
 ];
 
 @NgModule({
