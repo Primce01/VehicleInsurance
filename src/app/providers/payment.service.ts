@@ -1,12 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaymentService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private firestore: AngularFirestore) { }
+
+  getPayment(invoice_id) {
+    return this.firestore.collection('payments').doc(invoice_id).valueChanges();
+  }
 
   async addPayment(payment) {
     console.log(payment)

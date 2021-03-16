@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { InvoiceService } from 'src/app/providers/invoice.service';
 import { ModelService } from 'src/app/providers/model.service';
 import { PaymentService } from 'src/app/providers/payment.service';
@@ -43,7 +44,7 @@ export class PaymentPage implements OnInit {
     private paymentService: PaymentService,
     private invoiceService: InvoiceService,
     private route: ActivatedRoute,
-
+    private toastController: ToastController
   ) { }
 
   ngOnInit() {
@@ -56,13 +57,28 @@ export class PaymentPage implements OnInit {
       this.form.patchValue(data.items);
       console.log('Amount', this.amount)
     })
+
+    this.paymentService.getPayment(invoice_id).subscribe((payment: any) => {
+      if (payment && payment.status === 'Paid') {
+        if (this.invoice.type == 'license')
+          this.router.navigateByUrl('/licence-list');
+        else if (this.invoice.type == 'insurance')
+          this.router.navigateByUrl('/insurance-list');
+      } else if (payment && payment.status === 'Cancelled') {
+        this.toastController.create({
+          message: 'Payment has been cancelled',
+          color: 'danger',
+          duration: 2000
+        }).then(toast => {
+          toast.present()
+        })
+      }
+    })
   }
 
-
   async onSubmit() {
-    const responce = await this.paymentService.addPayment(this.form.value)
-    console.log(responce)
-    this.router.navigateByUrl('/licence-list');
+    const response = await this.paymentService.addPayment(this.form.value)
+    console.log(response);
   }
 }
 

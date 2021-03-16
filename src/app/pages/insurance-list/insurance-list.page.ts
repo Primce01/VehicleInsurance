@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 import { InsuranceService } from 'src/app/providers/insurance.service';
 import { InvoiceService } from 'src/app/providers/invoice.service';
+import { ModelService } from 'src/app/providers/model.service';
 import { VehiclesService } from 'src/app/providers/vehicles.service';
 
 
@@ -11,19 +14,16 @@ import { VehiclesService } from 'src/app/providers/vehicles.service';
   styleUrls: ['./insurance-list.page.scss'],
 })
 export class InsuranceListPage implements OnInit {
-  
-  invoices:any;
-  
+
   constructor(
-    private invoiceService: InvoiceService,
+    private modelService: ModelService,
     private vehicleService: VehiclesService,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.invoiceService.getInvoices().subscribe(data => {
-      console.log(data);
-      this.invoices = data;
-    })
+
+
   }
+
 }

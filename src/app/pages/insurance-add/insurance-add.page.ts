@@ -17,7 +17,8 @@ export class InsuranceAddPage implements OnInit {
   form: FormGroup = new FormGroup({
     vehicle_id: new FormControl('', Validators.required),
     vehicle_name: new FormControl('', Validators.required),
-    amount: new FormControl('', Validators.required)
+    amount: new FormControl('', Validators.required),
+    invoice: new FormControl('insurance', Validators.required)
   })
 
   get amount() {

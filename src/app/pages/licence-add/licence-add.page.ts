@@ -20,7 +20,8 @@ export class LicenceAddPage implements OnInit {
   form: FormGroup = new FormGroup({
     vehicle_id: new FormControl('', Validators.required),
     vehicle_name: new FormControl('', Validators.required),
-    amount: new FormControl('', Validators.required)
+    amount: new FormControl('', Validators.required),
+    type: new FormControl('license')
   })
 
   get amount() {
