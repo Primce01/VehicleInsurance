@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PolicyService } from 'src/app/providers/policy.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class PolicyDetailPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private policyService: PolicyService
     ) { }
 
@@ -24,5 +25,8 @@ export class PolicyDetailPage implements OnInit {
         this.descriptions = data1.description.split('\n')
       })
     });
+  }
+  onSubmit(){
+    this.router.navigateByUrl('/insurance-add');
   }
 }

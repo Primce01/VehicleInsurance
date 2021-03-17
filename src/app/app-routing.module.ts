@@ -148,6 +148,18 @@ const routes: Routes = [
     path: 'payment',
     loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
   },
+<<<<<<< HEAD
+=======
+  {
+    path: 'insurance-payment',
+    loadChildren: () => import('./pages/insurance-payment/insurance-payment.module').then( m => m.InsurancePaymentPageModule)
+  },
+  {
+    path: 'test',
+    loadChildren: () => import('./pages/test/test.module').then( m => m.TestPageModule)
+  },
+
+>>>>>>> Removed test
 ];
 
 @NgModule({
