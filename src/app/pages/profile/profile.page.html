@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-     <ion-menu-button></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>My Profile</ion-title>
     <ion-buttons slot="end">
@@ -14,39 +14,39 @@
 
 <ion-content>
   <ion-list>
-   
-   <ion-item routerLink="/profile-add"> </ion-item>
-   <ion-item>
-     <ion-label>Name</ion-label>
-     {{profile?.name}}
-   </ion-item>
 
-<ion-item>
-     <ion-label>Surname</ion-label>
-     {{profile?.surname}}
-   </ion-item>
-   <ion-item>
-    <ion-label>ID Number</ion-label>
-    {{profile?.idnumber}}
-  </ion-item>
+    <ion-item routerLink="/profile-add"> </ion-item>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      {{profile?.name}}
+    </ion-item>
 
-<ion-item>
-    <ion-label>Date Of Birth</ion-label>
-    {{profile?.year | date}}
-  </ion-item>
-  <ion-item>
-    <ion-label>Email</ion-label>
-    {{profile?.email}}
-  </ion-item>
+    <ion-item>
+      <ion-label>Surname</ion-label>
+      {{profile?.surname}}
+    </ion-item>
+    <ion-item>
+      <ion-label>ID Number</ion-label>
+      {{profile?.idnumber}}
+    </ion-item>
 
-<ion-item>
-    <ion-label>Cell</ion-label>
-    {{profile?.cell}}
-  </ion-item>
-  <ion-item>
-    <ion-label>Address</ion-label>
-    {{profile?.address}}
-  </ion-item>
-    
+    <ion-item>
+      <ion-label>Date Of Birth</ion-label>
+      {{profile?.year | date}}
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      {{profile?.email}}
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cell</ion-label>
+      {{profile?.cell}}
+    </ion-item>
+    <ion-item>
+      <ion-label>Address</ion-label>
+      {{profile?.address}}
+    </ion-item>
+
   </ion-list>
 </ion-content>

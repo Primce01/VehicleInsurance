@@ -42,13 +42,13 @@ export class VehicleAddPage implements OnInit {
 
 
   constructor(
-    private vehicleService: VehiclesService, 
+    private vehicleService: VehiclesService,
     private carService: CarService,
     private authService: AuthService,
     private router: Router) { }
 
   ngOnInit() {
-     this.carService.getCars().subscribe((data: any[]) =>{
+    this.carService.getCars().subscribe((data: any[]) => {
       console.log(data)
       this.makes = data;
     })
@@ -68,7 +68,7 @@ export class VehicleAddPage implements OnInit {
     })
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.form.value);
     this.vehicleService.updateVehicle(this.form.value);
     this.form.reset();

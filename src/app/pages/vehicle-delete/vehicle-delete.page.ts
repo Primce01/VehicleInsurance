@@ -10,7 +10,7 @@ import { VehiclesService } from 'src/app/providers/vehicles.service';
 })
 export class VehicleDeletePage implements OnInit {
 
-vehicle: any;
+  vehicle: any;
   constructor(
     private route: ActivatedRoute,
     private vehicleService: VehiclesService,
@@ -19,16 +19,16 @@ vehicle: any;
 
   ngOnInit() {
     this.route.params.pipe(
-      switchMap(params =>{
+      switchMap(params => {
         return this.vehicleService.getVehicle(params.vehicle_id)
       }),
-    ).subscribe(data=> {
+    ).subscribe(data => {
       console.log(data);
       this.vehicle = data
     })
   }
-onDelete(){
-  this.vehicleService.deleteVehicle(this.vehicle.id);
-  this.router.navigateByUrl('/vehicles')
-}
+  onDelete() {
+    this.vehicleService.deleteVehicle(this.vehicle.id);
+    this.router.navigateByUrl('/vehicles')
+  }
 }

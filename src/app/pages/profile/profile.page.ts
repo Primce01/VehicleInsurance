@@ -9,15 +9,15 @@ import { ProfileService } from 'src/app/providers/profile.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  profile: any ;
-  
+  profile: any;
+
   constructor(
     private route: ActivatedRoute,
     private profileService: ProfileService
   ) { }
 
   ngOnInit() {
-    
+
     this.profileService.getCurrentProfile().subscribe(data => {
       console.log(data);
       this.profile = data;

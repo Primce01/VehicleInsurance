@@ -13,7 +13,7 @@ export class InsuranceUpdatePage implements OnInit {
   makes: any[];
   make: any;
   model: any;
-  
+
   form: FormGroup = new FormGroup({
     make_name: new FormControl('', Validators.required),
     freq: new FormControl('', Validators.required),
@@ -23,7 +23,7 @@ export class InsuranceUpdatePage implements OnInit {
     licence: new FormControl('', Validators.required),
   })
   vehicles: any[];
-  
+
   constructor(
     private vehicleService: VehiclesService,
     private insuranceService: InsuranceService,
@@ -32,12 +32,12 @@ export class InsuranceUpdatePage implements OnInit {
   ) { }
 
   ngOnInit() {
-   
+
     this.vehicleService.getVehicles().subscribe(data => {
       this.vehicles = data;
     })
   }
-  
+
 
   onSubmit() {
     console.log(this.form.value);

@@ -9,37 +9,37 @@
 
 <ion-content class="ion-padding">
   <ion-list>
-   
-    
+
+
     <ion-item routerLink="/vehicles">
       <ion-label>Model</ion-label>
       {{vehicle?.model_name}}
     </ion-item>
- 
- <ion-item>
+
+    <ion-item>
       <ion-label>Year</ion-label>
       {{vehicle?.year | date}}
     </ion-item>
 
     <ion-item>
-     <ion-label>Chassis Number</ion-label>
-     {{vehicle?.chassis}}
-   </ion-item>
- 
- <ion-item>
-     <ion-label>Mileage</ion-label>
-     {{vehicle?.mileage}}
-   </ion-item>
+      <ion-label>Chassis Number</ion-label>
+      {{vehicle?.chassis}}
+    </ion-item>
 
-   <ion-item>
-     <ion-label>Registration Number</ion-label>
-     {{vehicle?.reg}}
-   </ion-item>
- 
- <ion-item>
-     <ion-label>Use</ion-label>
-     {{vehicle?.use}}
-   </ion-item>
+    <ion-item>
+      <ion-label>Mileage</ion-label>
+      {{vehicle?.mileage}}
+    </ion-item>
 
-   </ion-list>
+    <ion-item>
+      <ion-label>Registration Number</ion-label>
+      {{vehicle?.reg}}
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Use</ion-label>
+      {{vehicle?.use}}
+    </ion-item>
+
+  </ion-list>
 </ion-content>

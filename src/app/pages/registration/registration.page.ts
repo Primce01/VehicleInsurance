@@ -10,9 +10,9 @@ import { AuthService } from 'src/app/providers/auth.service';
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
- 
+
   form: FormGroup = new FormGroup({
-    
+
     name: new FormControl('', [Validators.required]),
     surname: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -26,7 +26,7 @@ export class RegistrationPage implements OnInit {
   get password() {
     return this.form.get('password');
   }
-  
+
   constructor(
     private authService: AuthService,
     private router: Router,

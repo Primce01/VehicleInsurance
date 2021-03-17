@@ -8,20 +8,21 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="form" (ngSubmit)="onSubmit() " >
+  <form [formGroup]="form" (ngSubmit)="onSubmit() ">
 
-  <ion-item-divider>Select Vehicle</ion-item-divider>
-  <ion-item>
-    <ion-label>Select Vehicle</ion-label>
-    <ion-select formControlName= "vehicle_id" cancelText="Cancel" okText="Ok">
-   <ion-select-option *ngFor="let vehicle of vehicles" [value]="vehicle.id">{{vehicle.make_name}} {{vehicle.model_name}}</ion-select-option>
-  
-  </ion-select>
-  </ion-item>
-</form>
+    <ion-item-divider>Select Vehicle</ion-item-divider>
+    <ion-item>
+      <ion-label>Select Vehicle</ion-label>
+      <ion-select formControlName="vehicle_id" cancelText="Cancel" okText="Ok">
+        <ion-select-option *ngFor="let vehicle of vehicles" [value]="vehicle.id">{{vehicle.make_name}}
+          {{vehicle.model_name}}</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+  </form>
 </ion-content>
 <ion-footer class="ion-padding" *ngIf="insurances">
   <ion-button size="block" *ngIf="!insurances.length">Get Insurance</ion-button>
-  <ion-button size="block" [disabled]="form.invalid" (click)="onSubmit()" *ngIf="insurances.length">Pay {{amount.value | currency}}</ion-button>
+  <ion-button size="block" [disabled]="form.invalid" (click)="onSubmit()" *ngIf="insurances.length">Pay {{amount.value |
+    currency}}</ion-button>
 </ion-footer>
-

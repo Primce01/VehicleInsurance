@@ -32,7 +32,7 @@ export class InsuranceAddPage implements OnInit {
   get vehicle_name() {
     return this.form.get('vehicle_name');
   }
- 
+
   constructor(
     private vehicleService: VehiclesService,
     private modelService: ModelService,
@@ -43,7 +43,7 @@ export class InsuranceAddPage implements OnInit {
   ) { }
 
   ngOnInit() {
-   
+
     this.vehicle_id.valueChanges.pipe(
       switchMap(id => {
         const vehicle = this.vehicles.find(v => v.id === id)
@@ -61,7 +61,7 @@ export class InsuranceAddPage implements OnInit {
       this.vehicles = data
       console.log(data)
     })
-    
+
   }
 
   async onSubmit() {
@@ -69,4 +69,4 @@ export class InsuranceAddPage implements OnInit {
     console.log(invoice);
     this.router.navigateByUrl(`/payment/${invoice.id}`);
   }
-}  
+}

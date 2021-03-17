@@ -7,103 +7,104 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <form [formGroup]="form" (ngSubmit)="onSubmit() " >
-     
-<ion-item-divider>Select Vehicle</ion-item-divider>
-<ion-item>
-  <ion-label>Select Vehicle</ion-label>
-  <ion-select formControlName= "make_name" cancelText="Cancel" okText="Ok">
- <ion-select-option *ngFor="let vehicle of vehicles" [value]="vehicle.id">{{vehicle.make_name}}</ion-select-option>
+  <form [formGroup]="form" (ngSubmit)="onSubmit() ">
 
-</ion-select>
-</ion-item>
+    <ion-item-divider>Select Vehicle</ion-item-divider>
+    <ion-item>
+      <ion-label>Select Vehicle</ion-label>
+      <ion-select formControlName="make_name" cancelText="Cancel" okText="Ok">
+        <ion-select-option *ngFor="let vehicle of vehicles" [value]="vehicle.id">{{vehicle.make_name}}
+        </ion-select-option>
 
-<ion-item-divider>Insurance Details</ion-item-divider>
-<ion-item>
-  <ion-label>Select Insurance Frequency</ion-label>
-  <ion-select formControlName= "freq" cancelText="Cancel" okText="Ok">
-    <ion-select-option value="1term">1 Term (4 months)</ion-select-option>
-    <ion-select-option value="2term">2 Terms (8 months)</ion-select-option>
-    <ion-select-option value="annual">Annual (1 Year)</ion-select-option>
-   
-  </ion-select>
-</ion-item>
+      </ion-select>
+    </ion-item>
 
-<ion-item>
-  <ion-label>Select Payment Method</ion-label> 
-  <ion-select formControlName= "method" cancelText="Cancel" okText="Ok">
-    <ion-select-option value="ecocash">Ecocash</ion-select-option>
-    <ion-select-option value="zipit">Zipit</ion-select-option>
-    <ion-select-option value="telecash">Telecash</ion-select-option>
-   
-  </ion-select>
-</ion-item>
-<ion-item>
-  <ion-label>Insurance Type</ion-label>
-  <ion-select formControlName= "type" cancelText="Cancel" okText="Ok">
-    <ion-select-option value="third">Third Party Cover</ion-select-option>
-    <ion-select-option value="laid">Laid Up Cover</ion-select-option>
-    <ion-select-option value="road">Road Traffic Act(Rta) Cover</ion-select-option>
-    <ion-select-option value="comp">Comprehensive Cover</ion-select-option>
-   
-  </ion-select>
-</ion-item>
-<ion-item> 
-  <ion-label>Select Vehicle Type</ion-label>
-  <ion-select formControlName= "vehicle"cancelText="Cancel" okText="Ok" >
-    <ion-select-option value="private">Private Car-Private Use</ion-select-option>
-    <ion-select-option value="bussiness">Private car-Bussiness Use</ion-select-option>
-    <ion-select-option value="fleet">Private car-Fleet</ion-select-option>
-    <ion-select-option value="car">Private car-Private hire(Car Hire</ion-select-option>
-    <ion-select-option value="School">Private car-Driving School</ion-select-option>
-    <ion-select-option value="trailer">Trailer-Domestic Trailers</ion-select-option>
-    <ion-select-option value="caravan">Trailers-Caravans</ion-select-option>
-    <ion-select-option value="own">Commercial Vehicle-Own use</ion-select-option>
-    <ion-select-option value="commercial">Commercial Vehicle-Own Use</ion-select-option>
-    <ion-select-option value="reward">Commercial Vehicle-Hire and Reward</ion-select-option>
-    <ion-select-option value="owns">Commercial Vehicle-Fleet-Own Use</ion-select-option>
-    <ion-select-option value="fleets">Commercial Vehicle-Fleet-Hire and Reward</ion-select-option>
-    <ion-select-option value="driving">Commercial Vehicle-Driving School</ion-select-option>
-    <ion-select-option value="taxis">Taxis-Public Hire</ion-select-option>
-    <ion-select-option value="trailers">Commmercial Trailers-Own Use</ion-select-option>
-    <ion-select-option value="hire">Commmercial Trailers-Hire and Reward</ion-select-option>
-    <ion-select-option value="uses">Commmercial Trailers-Fleet-Own Use</ion-select-option>
-    <ion-select-option value="hires">Commmercial Trailers-Fleet-Hire and Reward</ion-select-option>
-    <ion-select-option value="agriculture">Commmercial Trailers-Agriculture</ion-select-option>
-    <ion-select-option value="motor">Motor Cycle-SDP use</ion-select-option>
-    <ion-select-option value="cycle">Motor Cycle-Bussiness Use</ion-select-option>
-    <ion-select-option value="motors">Motor Cycle-Fleet</ion-select-option>
-    <ion-select-option value="omnibus">Omnibus and Commuters-Up to 30 seats</ion-select-option>
-    <ion-select-option value="commuter">Omnibus and Commuters-31-60 seats</ion-select-option>
-    <ion-select-option value="commuters">Omnibus and Commuters-More than 60seats</ion-select-option>
-    <ion-select-option value="school">School Bus-Up to 30 seats</ion-select-option> 
-    <ion-select-option value="bus">School bus-31-60 seats</ion-select-option>
-    <ion-select-option value="more">School bus-More than 60 seats</ion-select-option>
-    <ion-select-option value="staff">Staff bus-Upto 30 seats</ion-select-option>
-    <ion-select-option value="staffs">Staff bus-31-60</ion-select-option>
-    <ion-select-option value="buses">Staff bus-More than 60</ion-select-option>
-    <ion-select-option value="tractors">Tractors/Fork lifts-Own use</ion-select-option>
-    <ion-select-option value="tractor">Tractors-Hire and Reward</ion-select-option>
-    <ion-select-option value="combines">Tractors/Combines-Agriculture-Own Use</ion-select-option>
-    <ion-select-option value="agricultural">Tractors/Combines-Agriculture-Hire and Reward</ion-select-option>
-    <ion-select-option value="ambulance">Ambulance,Fire Engines,Hearse-Various</ion-select-option>
-    <ion-select-option value="implements">Agricultural Implements-Various</ion-select-option>
-    <ion-select-option value="special">Special Types-Contractors plant and Equipement</ion-select-option>
- 
-  </ion-select>
-</ion-item>
-<ion-item-divider>Insurance Details</ion-item-divider>
+    <ion-item-divider>Insurance Details</ion-item-divider>
+    <ion-item>
+      <ion-label>Select Insurance Frequency</ion-label>
+      <ion-select formControlName="freq" cancelText="Cancel" okText="Ok">
+        <ion-select-option value="1term">1 Term (4 months)</ion-select-option>
+        <ion-select-option value="2term">2 Terms (8 months)</ion-select-option>
+        <ion-select-option value="annual">Annual (1 Year)</ion-select-option>
 
-<ion-item>
-  <ion-label>Select Licence Frequency</ion-label>
-  <ion-select formControlName= "licence" cancelText="Cancel" okText="Ok">
-    <ion-select-option value="4months">4 months</ion-select-option>
-    <ion-select-option value="6months">6 months</ion-select-option>
-    <ion-select-option value="year">1 Year</ion-select-option>
-  </ion-select>
-  </ion-item>
-</form>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Select Payment Method</ion-label>
+      <ion-select formControlName="method" cancelText="Cancel" okText="Ok">
+        <ion-select-option value="ecocash">Ecocash</ion-select-option>
+        <ion-select-option value="zipit">Zipit</ion-select-option>
+        <ion-select-option value="telecash">Telecash</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Insurance Type</ion-label>
+      <ion-select formControlName="type" cancelText="Cancel" okText="Ok">
+        <ion-select-option value="third">Third Party Cover</ion-select-option>
+        <ion-select-option value="laid">Laid Up Cover</ion-select-option>
+        <ion-select-option value="road">Road Traffic Act(Rta) Cover</ion-select-option>
+        <ion-select-option value="comp">Comprehensive Cover</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Select Vehicle Type</ion-label>
+      <ion-select formControlName="vehicle" cancelText="Cancel" okText="Ok">
+        <ion-select-option value="private">Private Car-Private Use</ion-select-option>
+        <ion-select-option value="bussiness">Private car-Bussiness Use</ion-select-option>
+        <ion-select-option value="fleet">Private car-Fleet</ion-select-option>
+        <ion-select-option value="car">Private car-Private hire(Car Hire</ion-select-option>
+        <ion-select-option value="School">Private car-Driving School</ion-select-option>
+        <ion-select-option value="trailer">Trailer-Domestic Trailers</ion-select-option>
+        <ion-select-option value="caravan">Trailers-Caravans</ion-select-option>
+        <ion-select-option value="own">Commercial Vehicle-Own use</ion-select-option>
+        <ion-select-option value="commercial">Commercial Vehicle-Own Use</ion-select-option>
+        <ion-select-option value="reward">Commercial Vehicle-Hire and Reward</ion-select-option>
+        <ion-select-option value="owns">Commercial Vehicle-Fleet-Own Use</ion-select-option>
+        <ion-select-option value="fleets">Commercial Vehicle-Fleet-Hire and Reward</ion-select-option>
+        <ion-select-option value="driving">Commercial Vehicle-Driving School</ion-select-option>
+        <ion-select-option value="taxis">Taxis-Public Hire</ion-select-option>
+        <ion-select-option value="trailers">Commmercial Trailers-Own Use</ion-select-option>
+        <ion-select-option value="hire">Commmercial Trailers-Hire and Reward</ion-select-option>
+        <ion-select-option value="uses">Commmercial Trailers-Fleet-Own Use</ion-select-option>
+        <ion-select-option value="hires">Commmercial Trailers-Fleet-Hire and Reward</ion-select-option>
+        <ion-select-option value="agriculture">Commmercial Trailers-Agriculture</ion-select-option>
+        <ion-select-option value="motor">Motor Cycle-SDP use</ion-select-option>
+        <ion-select-option value="cycle">Motor Cycle-Bussiness Use</ion-select-option>
+        <ion-select-option value="motors">Motor Cycle-Fleet</ion-select-option>
+        <ion-select-option value="omnibus">Omnibus and Commuters-Up to 30 seats</ion-select-option>
+        <ion-select-option value="commuter">Omnibus and Commuters-31-60 seats</ion-select-option>
+        <ion-select-option value="commuters">Omnibus and Commuters-More than 60seats</ion-select-option>
+        <ion-select-option value="school">School Bus-Up to 30 seats</ion-select-option>
+        <ion-select-option value="bus">School bus-31-60 seats</ion-select-option>
+        <ion-select-option value="more">School bus-More than 60 seats</ion-select-option>
+        <ion-select-option value="staff">Staff bus-Upto 30 seats</ion-select-option>
+        <ion-select-option value="staffs">Staff bus-31-60</ion-select-option>
+        <ion-select-option value="buses">Staff bus-More than 60</ion-select-option>
+        <ion-select-option value="tractors">Tractors/Fork lifts-Own use</ion-select-option>
+        <ion-select-option value="tractor">Tractors-Hire and Reward</ion-select-option>
+        <ion-select-option value="combines">Tractors/Combines-Agriculture-Own Use</ion-select-option>
+        <ion-select-option value="agricultural">Tractors/Combines-Agriculture-Hire and Reward</ion-select-option>
+        <ion-select-option value="ambulance">Ambulance,Fire Engines,Hearse-Various</ion-select-option>
+        <ion-select-option value="implements">Agricultural Implements-Various</ion-select-option>
+        <ion-select-option value="special">Special Types-Contractors plant and Equipement</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-item-divider>Insurance Details</ion-item-divider>
+
+    <ion-item>
+      <ion-label>Select Licence Frequency</ion-label>
+      <ion-select formControlName="licence" cancelText="Cancel" okText="Ok">
+        <ion-select-option value="4months">4 months</ion-select-option>
+        <ion-select-option value="6months">6 months</ion-select-option>
+        <ion-select-option value="year">1 Year</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </form>
 </ion-content>
 <ion-footer class="ion-padding">
-  <ion-button [disabled]="form.invalid" size="block" (click)="onSubmit()" >$ Submit</ion-button>
+  <ion-button [disabled]="form.invalid" size="block" (click)="onSubmit()">$ Submit</ion-button>
 </ion-footer>
