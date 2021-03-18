@@ -10,7 +10,7 @@ import { VehiclesService } from 'src/app/providers/vehicles.service';
   styleUrls: ['./insurance-delete.page.scss'],
 })
 export class InsuranceDeletePage implements OnInit {
-insurance: any
+  insurance: any
   constructor(
     private insuranceService: InsuranceService,
     private route: ActivatedRoute,
@@ -19,16 +19,16 @@ insurance: any
 
   ngOnInit() {
     this.route.params.pipe(
-      switchMap(params =>{
+      switchMap(params => {
         return this.insuranceService.getInsurance(params.insurance_id)
       }),
-    ).subscribe(data=> {
+    ).subscribe(data => {
       console.log(data);
       this.insurance = data
     })
   }
-onDelete(){
-  this.insuranceService.deleteInsurance(this.insurance.id);
-  this.router.navigateByUrl('/insurance-list')
-}
+  onDelete() {
+    this.insuranceService.deleteInsurance(this.insurance.id);
+    this.router.navigateByUrl('/insurance-list')
+  }
 }

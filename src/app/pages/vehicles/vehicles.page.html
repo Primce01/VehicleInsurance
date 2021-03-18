@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title>My Vehicles</ion-title>
     <ion-buttons slot="end">
-      <ion-button routerLink="/vehicle-add"> 
+      <ion-button routerLink="/vehicle-add">
         <ion-icon name="add"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -14,10 +14,10 @@
 
 <ion-content>
   <ion-list *ngIf="vehicles">
-<p *ngIf="!vehicles.length" class="ion-text-center">No Vehicles To Display Please Add</p>
+    <p *ngIf="!vehicles.length" class="ion-text-center">No Vehicles To Display Please Add</p>
 
     <ion-item-sliding *ngFor="let vehicle of vehicles">
-     
+
       <ion-item lines="full" routerLink="/vehicle-details/{{vehicle.id}}">
         <ion-note slot="start">{{vehicle.make_id}}</ion-note>
         <ion-label>{{vehicle.make_name}}</ion-label>

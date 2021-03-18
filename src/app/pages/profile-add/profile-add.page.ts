@@ -9,7 +9,7 @@ import { ProfileService } from 'src/app/providers/profile.service';
   styleUrls: ['./profile-add.page.scss'],
 })
 export class ProfileAddPage implements OnInit {
- 
+
   form: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
     surname: new FormControl('', Validators.required),
@@ -28,15 +28,15 @@ export class ProfileAddPage implements OnInit {
 
   ngOnInit() {
     this.profileService.getCurrentProfile().subscribe((userData: any) => {
-      if(userData) this.form.patchValue(userData);
+      if (userData) this.form.patchValue(userData);
     })
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.form.value);
     this.profileService.updateProfile(this.form.value);
     this.form.reset();
     this.router.navigateByUrl('profile');
-  
+
   }
 }

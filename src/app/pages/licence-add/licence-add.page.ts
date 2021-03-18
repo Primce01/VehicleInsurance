@@ -77,7 +77,7 @@ export class LicenceAddPage implements OnInit {
     const invoice: any = await this.invoiceService.addInvoice(this.form.value);
     console.log(invoice);
     this.router.navigateByUrl(`/payment/${invoice.id}`);
-    
+
   }
 
 }

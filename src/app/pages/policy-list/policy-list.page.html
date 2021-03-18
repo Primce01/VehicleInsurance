@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let policy of policies" routerLink="/policy-detail/{{policy.id}}"> 
+    <ion-item *ngFor="let policy of policies" routerLink="/policy-detail/{{policy.id}}">
       <ion-note slot="start"></ion-note>
       <ion-label>
         <h3>{{policy.name | titlecase}}</h3>

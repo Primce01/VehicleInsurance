@@ -10,11 +10,11 @@ import { VehiclesService } from 'src/app/providers/vehicles.service';
 export class VehiclesPage implements OnInit {
   [x: string]: any;
 
-  vehicles:any[];
+  vehicles: any[];
   constructor(
     private vehicleService: VehiclesService,
     private route: ActivatedRoute,
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.vehicleService.getVehicles().subscribe(data => {

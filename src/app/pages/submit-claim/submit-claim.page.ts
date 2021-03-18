@@ -22,9 +22,9 @@ export class SubmitClaimPage implements OnInit {
 
   ngOnInit() {
   }
-  onSubmit(){
+  onSubmit() {
     console.log(this.form.value);
-   
-   
+
+
   }
 }

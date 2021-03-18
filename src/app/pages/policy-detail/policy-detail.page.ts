@@ -16,7 +16,7 @@ export class PolicyDetailPage implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private policyService: PolicyService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe(data => {

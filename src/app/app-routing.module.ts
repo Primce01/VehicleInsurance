@@ -50,27 +50,10 @@ const routes: Routes = [
     path: 'vehicles',
     loadChildren: () => import('./pages/vehicles/vehicles.module').then( m => m.VehiclesPageModule)
   },
-  // {
-  //   path: 'buy',
-  //   loadChildren: () => import('./pages/buy/buy.module').then( m => m.BuyPageModule)
-  // },
   {
     path: 'landing',
     loadChildren: () => import('./pages/landing/landing.module').then( m => m.LandingPageModule)
   },
- 
-  // {
-  //   // path: 'login',
-  //   // loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-  // },
-  // {
-  //   path: 'register',
-  //   loadChildren: () => import('./pages/auth/register/register.module').then( m => m.RegisterPageModule)
-  // },
-  // {
-  //   path: 'auth',
-  //   loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
-  // },
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
@@ -148,20 +131,13 @@ const routes: Routes = [
     path: 'payment',
     loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
   },
-<<<<<<< HEAD
-=======
-  {
-    path: 'insurance-payment',
-    loadChildren: () => import('./pages/insurance-payment/insurance-payment.module').then( m => m.InsurancePaymentPageModule)
-  },
+
   {
     path: 'test',
     loadChildren: () => import('./pages/test/test.module').then( m => m.TestPageModule)
   },
 
->>>>>>> Removed test
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

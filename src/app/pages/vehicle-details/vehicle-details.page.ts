@@ -19,7 +19,7 @@ export class VehicleDetailsPage implements OnInit {
   ) { }
 
   ngOnInit() {
-   
+
     const { vehicle_id } = this.route.snapshot.params;
     console.log(vehicle_id);
     this.vehicleService.getVehicle(vehicle_id).subscribe(data => {

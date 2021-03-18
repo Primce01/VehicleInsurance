@@ -18,4 +18,4 @@ import { VehicleAddPage } from './vehicle-add.page';
   ],
   declarations: [VehicleAddPage]
 })
-export class VehicleAddPageModule {}
+export class VehicleAddPageModule { }
