@@ -19,6 +19,12 @@
 
       </ion-select>
     </ion-item>
+    <ion-item>
+      <ion-label>Select License Frequency</ion-label>
+      <ion-select formControlName= "licence" cancelText="Cancel" okText="Ok">
+        <ion-select-option *ngFor="let licence of licences">{{licence.name}}</ion-select-option>
+      </ion-select>
+      </ion-item>
   </form>
 </ion-content>
 <ion-footer class="ion-padding" *ngIf="insurances">

@@ -8,6 +8,7 @@ import { InsuranceService } from 'src/app/providers/insurance.service';
 import { InvoiceService } from 'src/app/providers/invoice.service';
 import { ModelService } from 'src/app/providers/model.service';
 import { VehiclesService } from 'src/app/providers/vehicles.service';
+import { LicencefreqService } from 'VehicleInsurance/src/app/providers/licencefreq.service';
 
 @Component({
   selector: 'app-licence-add',
@@ -15,11 +16,13 @@ import { VehiclesService } from 'src/app/providers/vehicles.service';
   styleUrls: ['./licence-add.page.scss'],
 })
 export class LicenceAddPage implements OnInit {
-  vehicles: any[]
-  insurances: any[]
+  vehicles: any[];
+  insurances: any[];
+  licences: any;
   form: FormGroup = new FormGroup({
     vehicle_id: new FormControl('', Validators.required),
     vehicle_name: new FormControl('', Validators.required),
+    licence: new FormControl('', Validators.required),
     amount: new FormControl('', Validators.required),
     type: new FormControl('license')
   })
@@ -39,6 +42,7 @@ export class LicenceAddPage implements OnInit {
   constructor(
     private vehicleService: VehiclesService,
     private modelService: ModelService,
+    private licencefreqService: LicencefreqService,
     private invoiceService: InvoiceService,
     private insuranceService: InsuranceService,
     private router: Router
@@ -69,6 +73,10 @@ export class LicenceAddPage implements OnInit {
 
     this.vehicleService.getVehicles().subscribe(data => {
       this.vehicles = data
+      console.log(data)
+    })
+    this.licencefreqService.getLicence().subscribe(data => {
+      this.licences = data
       console.log(data)
     })
   }

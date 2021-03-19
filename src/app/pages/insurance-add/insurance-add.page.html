@@ -18,6 +18,23 @@
 
       </ion-select>
     </ion-item>
+
+    <ion-item-divider>Select Vehicle</ion-item-divider>
+    <ion-item>
+      <ion-label>Insurance Type</ion-label>
+      <ion-select formControlName= "insutype" cancelText="Cancel" okText="Ok">
+        <ion-select-option *ngFor="let type of types">{{type.name}}</ion-select-option>
+       
+      </ion-select>
+    </ion-item>
+    <ion-item-divider>Insurance Details</ion-item-divider>
+<ion-item>
+  <ion-label>Select Insurance Frequency</ion-label>
+  <ion-select formControlName= "freq" cancelText="Cancel" okText="Ok">
+    <ion-select-option *ngFor="let frequency of frequences">{{frequency.name}}</ion-select-option>
+   
+  </ion-select>
+</ion-item>
   </form>
 </ion-content>
 <ion-footer class="ion-padding">

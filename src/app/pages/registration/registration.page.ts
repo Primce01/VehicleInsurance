@@ -12,9 +12,7 @@ import { AuthService } from 'src/app/providers/auth.service';
 export class RegistrationPage implements OnInit {
 
   form: FormGroup = new FormGroup({
-
-    name: new FormControl('', [Validators.required]),
-    surname: new FormControl('', [Validators.required]),
+    
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });

@@ -14,16 +14,18 @@ import { VehiclesService } from 'src/app/providers/vehicles.service';
   styleUrls: ['./insurance-list.page.scss'],
 })
 export class InsuranceListPage implements OnInit {
-
+insurances: any;
   constructor(
-    private modelService: ModelService,
+    private insuranceService: InsuranceService,
     private vehicleService: VehiclesService,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-
-
+    this.insuranceService.getInsurances().subscribe(data => {
+      console.log(data);
+      this.insurances = data;
+      
+    })
   }
-
 }

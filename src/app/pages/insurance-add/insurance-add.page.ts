@@ -5,6 +5,8 @@ import { VehiclesService } from 'src/app/providers/vehicles.service';
 import { switchMap } from 'rxjs/operators';
 import { ModelService } from 'src/app/providers/model.service';
 import { InvoiceService } from 'src/app/providers/invoice.service';
+import { InsurancetypeService } from 'VehicleInsurance/src/app/providers/insurancetype.service';
+import { InsurancefreqService } from 'VehicleInsurance/src/app/providers/insurancefreq.service';
 @Component({
   selector: 'app-insurance-add',
   templateUrl: './insurance-add.page.html',
@@ -13,12 +15,16 @@ import { InvoiceService } from 'src/app/providers/invoice.service';
 export class InsuranceAddPage implements OnInit {
 
   vehicles: any[];
+  types: any;
+  frequences: any;
 
   form: FormGroup = new FormGroup({
     vehicle_id: new FormControl('', Validators.required),
     vehicle_name: new FormControl('', Validators.required),
+    insutype: new FormControl('', Validators.required),
+    freq: new FormControl('', Validators.required),
     amount: new FormControl('', Validators.required),
-    invoice: new FormControl('insurance', Validators.required)
+    type: new FormControl('insurance')
   })
 
   get amount() {
@@ -37,6 +43,8 @@ export class InsuranceAddPage implements OnInit {
     private vehicleService: VehiclesService,
     private modelService: ModelService,
     private invoiceService: InvoiceService,
+    private insurancetypeService: InsurancetypeService,
+    private insurancefreqService: InsurancefreqService,
     private router: Router,
     private route: ActivatedRoute,
 
@@ -61,6 +69,15 @@ export class InsuranceAddPage implements OnInit {
       this.vehicles = data
       console.log(data)
     })
+    this.insurancetypeService.getType().subscribe(data => {
+      this.types = data
+      console.log(data)
+    })
+    this.insurancefreqService.getFrequency().subscribe(data => {
+      this.frequences = data
+      console.log(data)
+    })
+
 
   }
 

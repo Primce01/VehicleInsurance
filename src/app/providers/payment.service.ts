@@ -13,7 +13,7 @@ export class PaymentService {
     return this.firestore.collection('payments').doc(invoice_id).valueChanges();
   }
 
-  async addPayment(payment) {
+  async initPayment(payment) {
     console.log(payment)
     return await this.http.post('https://payments02.herokuapp.com/ecocash', payment).toPromise();
   }

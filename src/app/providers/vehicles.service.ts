@@ -32,7 +32,7 @@ export class VehiclesService {
   async updateVehicle(vehicle: any) {
     if (!vehicle.id) vehicle.id = this.firestore.createId();
     const user = await this.authService.getUser().pipe(first()).toPromise();
-    this.firestore.collection('vehicles').doc(vehicle.id).set({ ...vehicle, user_id: user.uid });
+    this.firestore.collection('vehicles').doc(vehicle.id).set({ ...vehicle, user_id: user.uid, });
   }
 
   deleteVehicle(vehicle_id) {

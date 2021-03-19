@@ -21,7 +21,7 @@ export class ProfileService {
   getProfile(id: string) {
     return this.firestore.collection("profiles").doc(id).valueChanges();
   }
-
+  
   getCurrentProfile() {
     return this.authService.getUser().pipe(
       switchMap(userData => {
@@ -29,10 +29,9 @@ export class ProfileService {
       })
     )
   }
-
+  
   async updateProfile(profile: any) {
     const userData = await this.authService.getUser().pipe(take(1)).toPromise();
-    this.firestore.collection('profiles').doc(userData.uid).set(profile);
-
+    this.firestore.collection('profiles').doc(userData.uid).set({...profile, user_id: userData.uid })  
   }
-}
+}  

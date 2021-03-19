@@ -77,7 +77,7 @@ export class PaymentPage implements OnInit {
   }
 
   async onSubmit() {
-    const response = await this.paymentService.addPayment(this.form.value)
+    const response = await this.paymentService.initPayment(this.form.value)
     console.log(response);
   }
 }
