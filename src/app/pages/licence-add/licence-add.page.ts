@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ValueAccessor } from '@ionic/angular/directives/control-value-accessors/value-accessor';
+import { Button } from 'protractor';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { InsuranceService } from 'src/app/providers/insurance.service';
@@ -82,6 +83,7 @@ export class LicenceAddPage implements OnInit {
   }
 
   async onSubmit() {
+
     const invoice: any = await this.invoiceService.addInvoice(this.form.value);
     console.log(invoice);
     this.router.navigateByUrl(`/payment/${invoice.id}`);

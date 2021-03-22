@@ -64,15 +64,17 @@ export class AppComponent implements OnInit {
       icon: 'receipt'
     },
     {
+      title: 'My Insurance',
+      url: 'insurance-list',
+      icon: 'reader'
+    },
+    {
       title: 'My Vehicles',
       url: 'vehicles',
       icon: 'car-sport'
     },
-    {
-      title: 'About Us',
-      url: 'aboutus',
-      icon: 'library'
-    },
+
+    
     {
       title: 'FAQ',
       url: 'faq',

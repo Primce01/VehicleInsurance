@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { first } from 'rxjs/operators';
+import { first, switchMap } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -22,10 +22,20 @@ export class InvoiceService {
   }
 
   getInvoices() {
-    return this.firestore.collection('invoices').doc().valueChanges();
+    return this.authService.getUser().pipe(
+      switchMap((user: any) => {
+        return this.firestore.collection('invoices', ref => ref.where('user_id', '==', user.uid)).valueChanges();
+      })
+    )
   }
 
-  getInvoice(id) {
-    return this.firestore.collection('invoices').doc(id).valueChanges();
+  getInvoice(invoice_id) {
+    return this.firestore.collection('invoices').doc(invoice_id).valueChanges();
   }
+
+async updateInvoice(invoice: any) {
+  if (!invoice.id) invoice.id = this.firestore.createId();
+  const user = await this.authService.getUser().pipe(first()).toPromise();
+  this.firestore.collection('invoices').doc(invoice.id).set({ ...invoice, user_id: user.uid });
+}
 }
