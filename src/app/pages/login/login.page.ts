@@ -37,7 +37,7 @@ export class LoginPage implements OnInit {
     this.authService.login(this.email.value, this.password.value)
       .then(data => {
         console.log(data);
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/profile');
       })
       .catch(async err => {
         console.log(err);

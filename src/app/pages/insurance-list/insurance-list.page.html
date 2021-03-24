@@ -13,7 +13,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list  *ngIf="insurances">
+    <p *ngIf="!insurances.length" class="ion-text-center">No Insurances Available Please Add</p>
     <ion-item-sliding *ngFor="let insurance of insurances">
       <ion-item>
         <ion-label>{{insurance.vehicle_name}}</ion-label>

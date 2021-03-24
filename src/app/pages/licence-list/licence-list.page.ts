@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InvoiceService } from 'src/app/providers/invoice.service';
+import { LicensesService } from 'src/app/providers/licenses.service';
 
 
 @Component({
@@ -8,15 +9,15 @@ import { InvoiceService } from 'src/app/providers/invoice.service';
   styleUrls: ['./licence-list.page.scss'],
 })
 export class LicenceListPage implements OnInit {
-invoices: any;
+licenses: any;
   constructor(
-    private invoiceService: InvoiceService
+    private licensesService: LicensesService
   ) { }
 
   ngOnInit() {
-    this.invoiceService.getInvoices().subscribe(data => {
+    this.licensesService.getLicenses().subscribe(data => {
       console.log(data);
-      this.invoices = data;
+      this.licenses = data;
       
     })
   }

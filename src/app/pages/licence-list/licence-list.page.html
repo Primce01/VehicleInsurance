@@ -13,10 +13,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item-sliding *ngFor="let invoice of invoices">
+
+  <ion-list  *ngIf="licenses">
+    <p *ngIf="!licenses.length" class="ion-text-center">No Insurances Available Please Add</p>
+
+    <ion-item-sliding *ngFor="let license of licenses">
       <ion-item>
-        <ion-label>{{invoice.vehicle_name}}</ion-label>
+        <ion-label>{{license.vehicle_name}}</ion-label>
       </ion-item>
     </ion-item-sliding>
   </ion-list>

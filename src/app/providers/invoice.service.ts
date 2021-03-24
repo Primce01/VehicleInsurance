@@ -7,7 +7,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class InvoiceService {
-  vehicle_name: any;
+
   constructor(private firestore: AngularFirestore, private authService: AuthService) { }
 
   async addInvoice(items: any[]) {
